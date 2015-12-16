@@ -8,12 +8,8 @@
 
 
     <menuItem>
-        <label>Item2</label>
+        <label>Itemaaaaaaaa2</label>
         <path>pad2</path>
-        <menuItem>
-            <label>Item1</label>
-            <path>pad2</path>
-        </menuItem>
     </menuItem>
 
 </menu>

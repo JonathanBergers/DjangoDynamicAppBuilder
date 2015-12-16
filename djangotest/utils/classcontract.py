@@ -79,7 +79,23 @@ def getMenu(path):
 
     return menuItems
 
+# TODO recursive
 
-
-
+#
+# def getMenuItemFromDict(dict):
+#     menuItems = dict["menuItem"]
+#
+#
+#     try:
+#                 label = i["label"]
+#                 try:
+#                     path = i["path"]
+#                 #     make menu class
+#                     menuItem = type("MenuItem", (), {"label": label, "path": path})
+#                     menuItems.append(menuItem)
+#                 except KeyError:
+#                     print("no path given for menu item")
+#             except KeyError:
+#                 print("no label for menu")
+#
 
