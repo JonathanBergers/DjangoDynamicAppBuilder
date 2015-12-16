@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+	This file is generated automatically from GRM
+
+    Name:   Configuration file for CREATE RQMRole
+    Date:   Jun 19 2015  2:05PM
+    Note:   Please make a back-up before editing this file
+
+-->
+<form id ="create">
+    <actiontype>create</actiontype>
+    <title>Create RQMRole</title>
+    <access>admin</access>
+
+    <!-- database settings -->
+    <database>
+        <connection>DBConnection</connection>
+        <table>RQMRole</table>
+        <primarykey>id</primarykey>
+        <condition>1 = 1</condition>
+        <order>id</order>
+    </database>
+
+    <!-- audit -->
+    <audit>
+        <table>log_RQMRole</table>
+        <enabled>yes</enabled>
+        <view>RQMRoleedit</view>
+    </audit>
+
+    <!-- begin form -->
+    <section id="1">
+
+        <htmlobject id="pk" type="inputbox">
+            <label>ID</label>
+            <enabled>no</enabled>
+            <dbfield>ID</dbfield>
+            <cssclass>input</cssclass>
+            <width>50</width>
+        </htmlobject>
+        <htmlobject type ="break" />
+
+        <htmlobject id="1" type="inputbox">
+            <label>role</label>
+            <mandatory>no</mandatory>
+            <enabled>yes</enabled>
+            <dbfield>role</dbfield>
+            <cssclass>input</cssclass>
+            <datatype>varchar50</datatype>
+            <defvalue></defvalue>
+            <width>200</width>
+            <taborder>1</taborder>
+        </htmlobject>
+        <htmlobject type ="break" />
+
+        <htmlobject id="2" type="inputbox">
+            <label>descr</label>
+            <mandatory>no</mandatory>
+            <enabled>yes</enabled>
+            <dbfield>descr</dbfield>
+            <cssclass>input</cssclass>
+            <datatype>varchar50</datatype>
+            <defvalue></defvalue>
+            <width>200</width>
+            <taborder>2</taborder>
+        </htmlobject>
+        <htmlobject type ="break" />
+
+        <htmlobject type="rule">
+            <width>800</width>
+        </htmlobject>
+
+    </section>
+
+    <!-- buttons-->
+    <section id="100">
+        <htmlobject id="200" type="button">
+            <action>insert</action>
+            <enabled>yes</enabled>
+            <label>Save</label>
+            <cssclass>button</cssclass>
+            <width>80</width>
+            <taborder>200</taborder>
+        </htmlobject>
+
+        <htmlobject id="201" type="button">
+            <action>cancel</action>
+            <enabled>yes</enabled>
+            <label>Cancel</label>
+            <cssclass>button</cssclass>
+            <width>80</width>
+            <taborder>201</taborder>
+        </htmlobject>
+
+    </section>
+</form>
+
+<!-- end form -->

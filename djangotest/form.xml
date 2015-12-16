@@ -1,0 +1,20 @@
+<form>
+    <htmlObject type="input">
+        <label>textForm</label>
+        <inputType>text</inputType>
+        <maxLength>20</maxLength>
+    </htmlObject>
+
+    <htmlObject type="input">
+        <label>datumForm</label>
+        <inputType>date</inputType>
+    </htmlObject>
+
+    <htmlObject type="input">
+        <label>emailForm</label>
+        <inputType>email</inputType>
+    </htmlObject>
+
+    <htmlObject type="other">
+    </htmlObject>
+</form>
