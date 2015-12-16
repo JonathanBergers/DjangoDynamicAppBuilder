@@ -50,3 +50,36 @@ def getForms(path):
 
 
 
+
+
+
+from django.views import generic
+
+def getMenu(path):
+
+    with open(path, 'r') as myfile:
+        data=myfile.read().replace('\n', '')
+        import xmltodict
+    parsed = xmltodict.parse(data)
+    parsedMenuItems =parsed["menu"]["menuItem"]
+
+    menuItems =[]
+    for i in parsedMenuItems:
+        try:
+            label = i["label"]
+            try:
+                path = i["path"]
+            #     make menu class
+                menuItem = type("MenuItem", (), {"label": label, "path": path})
+                menuItems.append(menuItem)
+            except KeyError:
+                print("no path given for menu item")
+        except KeyError:
+            print("no label for menu")
+
+    return menuItems
+
+
+
+
+

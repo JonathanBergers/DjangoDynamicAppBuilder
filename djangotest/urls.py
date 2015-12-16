@@ -15,12 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views.generic import ListView
 
 from djangotest.forms import testform
+from djangotest.utils import classcontract
 from djangotest.views import testView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^test/', testView.get),
+    url(r'^test2/', testView.MenuView.as_view()),
 
 ]

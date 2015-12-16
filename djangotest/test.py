@@ -2,7 +2,7 @@ import xmltodict
 
 from djangotest.model.menu import MenuItem
 
-with open('menu.prop', 'r') as myfile:
+with open('config/menu.xml', 'r') as myfile:
     data=myfile.read().replace('\n', '')
 
 # print(data)

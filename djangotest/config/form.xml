@@ -17,4 +17,9 @@
 
     <htmlObject type="other">
     </htmlObject>
+
+        <htmlObject type="input">
+        <label>Jemoeder</label>
+        <inputType>date</inputType>
+    </htmlObject>
 </form>

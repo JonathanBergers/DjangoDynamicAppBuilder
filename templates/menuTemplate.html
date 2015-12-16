@@ -1,0 +1,32 @@
+{% include 'material/includes/material_css.html' %}
+{% include 'material/includes/material_js.html' %}
+{% load i18n static %}
+{% load material_form %}
+
+
+<header>
+    <nav class="nav-top green">
+        <a href="#" data-activates="nav-mobile" class="button-collapse full"><i class="mdi-navigation-menu"></i></a>
+
+        <div class="nav-wrapper">
+            <div class="page-title hide-on-med-and-down">
+                {% block page_title %}<a href="/test">{% trans "Viewflow" %}</a>{% endblock %}
+            </div>
+        </div>
+        {#            MENU#}
+        <ul id="nav-mobile" class="side-nav fixed module-menu">
+        <li class="logo valign-wrapper">
+                <a href="/" class="no-navigation">{% block page_logo %}<img class="responsive-img" src="{% static 'material/imgs/logo.png' %}">{% endblock %}</a>
+            </li>
+         {% for i in menuItems %}
+            <li><a href={{ i.path }}> {{ i.label }}</a></li>
+        {% endfor %}
+
+{#        LOGO#}
+
+
+
+
+        </ul>
+    </nav>
+</header>
