@@ -15,6 +15,12 @@
         <inputType>email</inputType>
     </htmlObject>
 
+       <htmlObject type="input">
+        <label>JONATHAN</label>
+        <inputType>date</inputType>
+    </htmlObject>
+
+
     <htmlObject type="other">
     </htmlObject>
 

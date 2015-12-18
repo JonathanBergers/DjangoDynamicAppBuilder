@@ -1,7 +1,7 @@
 <menu>
 
     <menuItem>
-        <label>Item1</label>
+        <label>Item1AAAAAA</label>
         <path>pad2</path>
     </menuItem>
 
@@ -11,5 +11,16 @@
         <label>Itemaaaaaaaa2</label>
         <path>pad2</path>
     </menuItem>
+
+        <menuItem>
+        <label>Itemaaaaaaaa2</label>
+        <path>pad2</path>
+    </menuItem>
+
+        <menuItem>
+        <label>Itemaaaaaaaa2</label>
+        <path>pad2</path>
+    </menuItem>
+
 
 </menu>

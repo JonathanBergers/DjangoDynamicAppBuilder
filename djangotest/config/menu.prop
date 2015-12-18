@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <menu id="menu">
   <menuitem level ="1">
-    <menutext>Login</menutext>
+    <menutext>LoginAAA</menutext>
     <module>login</module>
     <security>application</security>
   </menuitem>

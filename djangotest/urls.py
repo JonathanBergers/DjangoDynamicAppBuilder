@@ -25,5 +25,8 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^test/', testView.get),
     url(r'^test2/', testView.MenuView.as_view()),
+    url(r'^test3/', testView.TableView.as_view()),
+    # url(r'^test4/', testView.anotherView()),
+
 
 ]

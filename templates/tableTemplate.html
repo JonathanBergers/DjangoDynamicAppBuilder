@@ -1,0 +1,64 @@
+{% include 'material/includes/material_css.html' %}
+{% include 'material/includes/material_js.html' %}
+{% load i18n static %}
+{% load material_form %}
+
+
+{% load material_form material_form_internal %}
+
+<header>
+    <nav class="nav-top green">
+        <a href="#" data-activates="nav-mobile" class="button-collapse full"><i class="mdi-navigation-menu"></i></a>
+
+        <div class="nav-wrapper">
+            <div class="page-title hide-on-med-and-down">
+                {% block page_title %}<a href="/test">{% trans "Viewflow" %}</a>{% endblock %}
+            </div>
+        </div>
+        {#            MENU#}
+
+    </nav>
+</header>
+
+<body>
+
+
+<div class="card">
+
+    <div class="card-content">
+        <div class="results row">
+    <div class="col s12">
+        <table id="result_list" class="table">
+            <thead>
+
+            {#Headers#}
+            {% for headerNames in rows.1 %}
+                <th scope="col"  class="sortable  sorted ascending">
+                    {{ headerNames }}
+                </th>
+            {% endfor %}
+
+            </thead>
+
+            <tbody>
+
+            {% for row in rows %}
+                <tr scope="col"  class="sortable  sorted ascending">
+                    {% for k, v  in row.items %}
+                        <td>{{ v }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+    </div>
+
+
+</div>
+
+
