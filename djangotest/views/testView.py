@@ -1,5 +1,6 @@
 import django.forms
 from django import forms
+from django.core.paginator import Paginator
 from django.db import connection
 from django.db.models import Manager
 from django.http import HttpRequest, HttpResponse
@@ -7,6 +8,7 @@ from django.shortcuts import render
 from django.forms import Form
 import os
 
+from django.template.loader_tags import register
 from django.views import generic
 from django.views.generic import ListView
 from django.views.generic.list import BaseListView
@@ -20,7 +22,6 @@ def get(request):
     form = classcontract.getForms(file_path)
 
     if(request.method == 'GET'):
-
         form = form
     else:
         form = form(request.POST)
@@ -44,6 +45,17 @@ def anotherView():
     # print(data)
 
 
+
+
+def show_table(tableName):
+    queryString = "SELECT * FROM " + (tableName)
+    print(queryString)
+    cursor = connection.cursor()
+
+    cursor.execute(queryString)
+    result = dictfetchall(cursor)
+    return result
+
 def dictfetchall(cursor):
     "Return all rows from a cursor as a dict"
     columns = [col[0] for col in cursor.description]
@@ -53,17 +65,12 @@ def dictfetchall(cursor):
     ]
 
 
+@register.inclusion_tag('table.html', name='show_table')
 class TableView(ListView):
-    items = [["jo", "jo", "jo"], ["hi", "hi", "hi"]]
     context_object_name = 'rows'
-
-    cursor = connection.cursor()
-    cursor.execute("SELECT * FROM test")
-
-    queryset = dictfetchall(cursor)
-
-    print(queryset)
-    template_name = 'tableTemplate.html'
+    queryset = show_table('test')
+    paginate_by = 10
+    template_name = 'table.html'
 
 
 class MenuView(ListView):
@@ -71,12 +78,14 @@ class MenuView(ListView):
     paginate_by = 25
     context_object_name = 'menuItems'
 
+    templateView = TableView()
     module_dir = os.path.dirname(__file__)  # get current directory
-    file_path = os.path.join(module_dir, '../config/menu.xml')
+    file_path = os.path.join(module_dir, '../config/../pages/main/menu.xml')
     queryset = classcontract.getMenu(file_path)
 
 
 
-    # queryset = {"jo", "jo"}
+
+# queryset = {"jo", "jo"}
 
 

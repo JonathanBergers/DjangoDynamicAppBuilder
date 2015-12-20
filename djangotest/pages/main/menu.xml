@@ -1,0 +1,32 @@
+<menu>
+
+    <menuItem>
+        <label>item1</label>
+        <page>pad2</page>
+        <menuItem>
+            <label>item1</label>
+            <page>pad2</page>
+            <menuItem>
+                <label>item1</label>
+                <page>pad2</page>
+            </menuItem>
+        </menuItem>
+    </menuItem>
+
+    <menuItem>
+        <label>Itemaaaaaaaa2</label>
+        <page>pad2</page>
+    </menuItem>
+
+    <menuItem>
+        <label>Itemaaaaaaaa2</label>
+        <page>pad2</page>
+    </menuItem>
+
+    <menuItem>
+        <label>Itemaaaaaaaa2</label>
+        <page>pad2</page>
+    </menuItem>
+
+
+</menu>
