@@ -6,10 +6,13 @@
 
 
 
-<form method="POST">
+<div class="row">
+<form method="POST" class="viewform">
     {% csrf_token %}
-    {% form form=form %}{% endform %}
+    {% form  %}{% endform %}<i class="prefix"></i>
     <button type="submit" name="_submit" class="btn">Submit</button>
 </form>
+</div>
+
 
 {% render_table "test" %}

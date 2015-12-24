@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3149131130">
+  <component name="DataSourceManagerImpl" format="xml" hash="3217365070">
     <data-source source="LOCAL" name="Django default" uuid="41a3b867-da32-4d74-a4d0-0c7d926a4dec">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/djangotest/../db.sqlite3</jdbc-url>
       <libraries>
         <library>
           <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/xerial-sqlite-license.txt</url>
         </library>
         <library>
           <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/sqlite-jdbc-3.8.9.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="SQL Server -" uuid="13f81833-219e-48fd-ab38-3f1a7382bb36">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://192.168.0.114\SQLEXPRESS:1433;databaseName=jonathan</jdbc-url>
+      <libraries>
+        <library>
+          <url>file://$USER_HOME$/Desktop/sqljdbc_6.0/enu/sqljdbc42.jar</url>
         </library>
       </libraries>
     </data-source>

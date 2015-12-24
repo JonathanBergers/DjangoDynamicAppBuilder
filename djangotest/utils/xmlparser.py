@@ -1,3 +1,4 @@
+from django.forms import forms
 import xmltodict
 from djangotest.model.menu import MenuItem
 
@@ -17,27 +18,31 @@ def parse_menu(page):
         except KeyError:
             print("menu item has no label or page")
 
-    print(parsed_menu_items)
+    return {"menuItems" : parsed_menu_items}
 
 
 def create_menu_dict(menu_dict):
     label = menu_dict['label']
     page = menu_dict['page']
-    menu_item = {"label": label, "page": page}
-    try:
-        sub_menu_dict = menu_dict["menuItem"]
-        try:
-            print("SUB ITEM")
-            sub_menu_item = create_menu_dict(sub_menu_dict)
-            menu_item["menuItem"] = sub_menu_item
-            return menu_item
-        except KeyError:
-            print("sub menu item has no label or page")
-    except KeyError:
-        print("NO SUB ITEM")
-        # menu item has no sub menu
-        return menu_item
+    parsed_menu_item = {"label": label, "page": page}
+    return parsed_menu_item
+
+#
+# def create_menu_dict_rec(menu_dict, menu_item):
+#     try:
+#         sub_menu_dict = menu_dict["menuItem"]
+#         menu_item["menuItem"] = create_menu_dict()
+#     except KeyError:
+#         try:
+#             label = menu_dict['label']
+#             page = menu_dict['page']
+#             parsed_menu_item = {"label": label, "page": page}
+#             menu_item["menuItem"] = parsed_menu_item
+#             return menu_item
+#         except KeyError:
+#             print("no label or page")
+#             return menu_item
 
 
 
-parse_menu('main')
+

@@ -13,7 +13,23 @@ def convert_to_dict(cursor):
 
 
 def select_all(table_name):
-    query_string = "SELECT * FROM " + table_name
-    cursor = connection.cursor()
-    cursor.execute(query_string)
-    return convert_to_dict(cursor)
+    import pymssql
+    conn = pymssql.connect(server='192.168.0.114', user='admin', password='admin',
+    database='jonathan', as_dict=True)
+    cursor = conn.cursor()
+    cursor.execute("SELECT *  FROM " + table_name)
+    # print(conn)
+
+    return cursor.fetchall()
+
+
+
+
+def get_information_scheme(table_name):
+    import _mssql
+    conn = _mssql.connect(server='192.168.0.114', user='admin', password='admin',
+    database='jonathan')
+    conn.execute_query('SELECT * FROM INFORMATION_SCHEMA.TA')
+
+    for row in conn:
+        print(row)

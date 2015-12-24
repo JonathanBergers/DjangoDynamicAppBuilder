@@ -1,0 +1,33 @@
+<form>
+    <database>
+        <table>test</table>
+    </database>
+
+    <input>
+        <label>id</label>
+        <type>int</type>
+    </input>
+
+
+
+    <input>
+        <label>datum</label>
+        <type>date</type>
+        <nullable>true</nullable>
+    </input>
+    <input>
+        <label>label</label>
+        <type>varchar</type>
+    </input>
+    <input>
+        <label>email</label>
+        <type>email</type>
+    </input>
+    <input>
+        <label>birthday</label>
+        <type>date</type>
+    </input>
+
+
+
+</form>

@@ -2,5 +2,11 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="Django default" uuid="41a3b867-da32-4d74-a4d0-0c7d926a4dec" />
+    <data-source name="SQL Server -" uuid="13f81833-219e-48fd-ab38-3f1a7382bb36">
+      <secret-storage>master_key</secret-storage>
+      <user-name>admin</user-name>
+      <schema-pattern>jonathan.*</schema-pattern>
+      <default-schemas>jonathan.*</default-schemas>
+    </data-source>
   </component>
 </project>

@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+
+
+{% load material_form %}
+{% block form_content %}
+    <div class="row">
+        <div class="col s12 m12 l11">
+            <form role="form" method="POST">
+                <div class="card form-card">
+                    <div class="card-content">
+                        <div class="card-title black-text">{{ view.title }}</div>
+                        {% csrf_token %}
+                        {% form form=form layout=view.layout %}{% endform %}
+                    </div>
+                    <div class="card-action row">
+                        <div class="col s12 right-align">
+                            <button class="btn" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block table_content %}
+    <div class="card">
+        <div class="card-content">
+            <div class="results row">
+                <div class="col s12">
+                    <table id="result_list" class="table responsive-table">
+                        <thead>
+
+
+
+                        {#Headers#}
+                        {% for r,v in result.0.items %}
+
+
+                            <th scope="col"  class="sortable  sorted ascending">
+                                {{ r }}
+                            </th>
+                        {% endfor %}
+
+                        </thead>
+
+                        <tbody>
+
+                        {% for row in result %}
+                            <tr scope="col"  class="sortable  sorted ascending">
+                                {% for i, value  in row.items %}
+                                    <td>{{ value }}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+
+        {% if is_paginated %}
+            <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="/test3?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="/test3?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+            </div>
+        {% endif %}
+
+
+    </div>
+
+{% endblock %}
+

@@ -3,6 +3,7 @@ from django.db import connection
 from django.template.loader import render_to_string
 from django.views.generic import ListView
 from djangotest.model import dao
+from djangotest.utils import xmlparser
 
 __author__ = 'jonathan'
 
@@ -14,8 +15,12 @@ def get_table_view(table_name):
     return dao.select_all(table_name)
 
 
+# @register.inclusion_tag('menu.html', name="render_table")
+def get_menu_view(page):
+    return xmlparser.parse_menu(page)
 
-def get_menu_view(menu_path):
+
+
 
 
 #

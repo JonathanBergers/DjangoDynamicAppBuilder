@@ -15,18 +15,21 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from django.views.generic import ListView
+from djangotest import forms
+from djangotest.utils import modelcreator
 
-from djangotest.forms import testform
-from djangotest.utils import classcontract
 from djangotest.views import testView
+from material.frontend import urls as frontend_urls
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^test/', testView.get),
+    url(r'', include(frontend_urls)),
+    # url(r'^test/', testView.get_information_scheme()),
     url(r'^test2/', testView.MenuView.as_view()),
     url(r'^test3/', testView.TableView.as_view()),
-    # url(r'^test4/', testView.anotherView()),
+    url(r'^test4/', modelcreator.create_form),
+    url(r'^test5/', testView.MaterialFormView.as_view()),
+     url(r'^test6/', testView.PageView.as_view(table_name="persons")),
 
 
 ]

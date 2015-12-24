@@ -1,11 +1,12 @@
-{% include 'base.html' %}
+{% extends 'base.html' %}
 {% load i18n static %}
 
+{% block table_content %}
 <div class="card">
     <div class="card-content">
         <div class="results row">
             <div class="col s2">
-                <table id="result_list" class="table">
+                <table id="result_list" class="table responsive-table">
                     <thead>
 
                     {#Headers#}
@@ -35,6 +36,7 @@
 
 
 
+
     </div>
 
 
@@ -56,5 +58,8 @@
 
 
 </div>
+
+{% endblock %}
+
 
 
